@@ -1,38 +1,81 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header p {
+  font-size: 1.2em;
+  color: #6c757d;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#file-input {
+  display: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  border: 1px solid rgb(185, 185, 185);
+  overflow: hidden;
+  background-color: white; /* Space between border and image */
+}
+
+.gallery-image {
+  position: absolute;
+  top: 8px; /* Adjust for padding */
+  left: 8px; /* Adjust for padding */
+  width: calc(100% - 16px); /* Adjust for padding */
+  height: calc(100% - 16px); /* Adjust for padding */
+  object-fit: cover;
+
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.selected-image {
+  width: 100%;
+  height: auto;
 }
